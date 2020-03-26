@@ -1,0 +1,39 @@
+## letsencrypt-zimbra.cfg
+#
+# A configuration file - shell script - with variables
+# this file is sourced by main script
+
+# letsencrypt-zimbra parameters ============================
+# Email to use for LE registration and to send the notifications
+email="admin@example.com"
+
+# Syslog facility. Default: "local6"
+# Set to "none" if you want to disable syslog logging
+#log_facility="local6"
+
+# One or more FQDNS names to use as common name (or as
+# alternative names more precisely) in the certificate.
+#
+# The letsencrypt won't let you to obtain wildcard certificate
+# so use all your needed (and used) DNS names for the server.
+#
+# Please note that this variable is a bash array, so do not forget to
+# use parantheses
+#
+# example: one CN
+common_names=( "example.com" )
+# example: several CNs
+#common_names=( "example.com" "mail.example.com" "example.cz" )
+
+# letsencrypt tool =========================================
+letsencrypt="/usr/bin/certbot"
+# if you clone the certbot from Github, use following line instead
+#letsencrypt="/opt/certbot/certbot-auto"
+
+# zimbra files =============================================
+zimbra_dir="/opt/zimbra"
+
+# following values are zimbra defaults; change it if you need to
+#zimbra_ssl_dir="${zimbra_dir}/ssl/zimbra/commercial"
+#zimbra_key="${zimbra_ssl_dir}/commercial.key"
+#zimbra_cert="${zimbra_ssl_dir}/commercial.crt"
